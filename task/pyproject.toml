@@ -1,0 +1,23 @@
+[project]
+name = "task"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Tabyreto4ka1",email = "sashakorostij@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic (>=1.20.1,<2.0.0)",
+    "psycopg2 (>=2.9.13,<3.0.0)",
+    "sqlalchemy (>=2.1.6,<3.0.0)",
+    "fastapi (>=0.162.0,<0.163.0)",
+    "uvicorn[standard] (>=0.54.0,<0.55.0)"
+]
+
+[tool.poetry]
+packages = [{include = "task", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
