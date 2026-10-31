@@ -49,7 +49,8 @@ async def birthday_contacts(skip:int, limit:int, db:Session)->List[Contact]:
     today = datetime.datetime.now(datetime.timezone.utc).date()
     for i in range(0,8):
         date=today+datetime.timedelta(days=i)
-        contacts.extend(db.query(Contact).filter(func.date(Contact.birthday)==date).offset(skip).limit(limit).all())
+        date_str = date.strftime("%m-%d")
+        contacts.extend(db.query(Contact).filter(func.to_char(Contact.birthday, "MM-DD")==date_str).offset(skip).limit(limit).all())
     return contacts
         
 async def search_contact(body: ContactSearch,db:Session)-> List[Contact]:

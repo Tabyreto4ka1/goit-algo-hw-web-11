@@ -12,7 +12,9 @@ dependencies = [
     "psycopg2 (>=2.9.13,<3.0.0)",
     "sqlalchemy (>=2.1.6,<3.0.0)",
     "fastapi (>=0.162.0,<0.163.0)",
-    "uvicorn[standard] (>=0.54.0,<0.55.0)"
+    "uvicorn[standard] (>=0.54.0,<0.55.0)",
+    "pydantic[email] (>=2.14.2,<3.0.0)",
+    "python-dotenv (>=1.2.4,<2.0.0)"
 ]
 
 [tool.poetry]
